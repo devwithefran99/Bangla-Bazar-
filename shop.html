@@ -133,7 +133,7 @@
        
  
         <li class="nav-item">
-          <a class="nav-link" href="about us.html"><i class="bi bi-info-circle me-1"></i> About Us</a>
+             <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About Us</a>
         </li>
  
         <li class="nav-item">
@@ -210,8 +210,8 @@
   </ul>
 </div>
       
-      <a class="nav-link" href="about us.html">
-        <span><i class="bi bi-info-circle me-2 text-success"></i>About Us</span>
+      <a class="nav-link" href="about.html">
+       <span><i class="bi bi-info-circle me-2 text-success"></i>About Us</span>
       </a>
  
       <a class="nav-link" href="contact.html">
@@ -684,6 +684,47 @@
  
 </section>
 <!-- end add to cart popup -->
+
+    <!-- eye pop up starts -->
+<!-- Quick View Modal — body এর শেষে একবারই রাখো -->
+<div class="qv-backdrop" id="qvBackdrop">
+  <div class="qv-modal" role="dialog" aria-modal="true">
+    <button class="qv-close" id="qvClose" aria-label="Close"><i class="bi bi-x"></i></button>
+
+    <div class="qv-img-side">
+      <img id="qvImg" src="" alt="">
+    </div>
+
+    <div class="qv-info-side">
+      <span class="qv-category" id="qvCat">Vegetables</span>
+      <h2 class="qv-title" id="qvTitle"></h2>
+      <div class="qv-stars">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <i class="bi bi-star empty"></i>
+      </div>
+      <div class="qv-price-row">
+        <span class="qv-price-current" id="qvPrice"></span>
+        <span class="qv-price-old" id="qvOld"></span>
+        <span class="qv-discount" id="qvDiscount" style="display:none"></span>
+      </div>
+      <p class="qv-desc" id="qvDesc">Fresh, naturally grown product. Packed with nutrients and flavour — perfect for everyday cooking.</p>
+      <div class="qv-qty-row">
+        <span class="qv-qty-label">Qty</span>
+        <div class="qv-qty-ctrl">
+          <button class="qv-qty-btn" id="qvMinus"><i class="bi bi-dash"></i></button>
+          <input class="qv-qty-val" id="qvQty" type="number" value="1" min="1" max="99">
+          <button class="qv-qty-btn" id="qvPlus"><i class="bi bi-plus"></i></button>
+        </div>
+      </div>
+      <div class="qv-btn-row">
+        <button class="qv-btn-cart"><i class="bi bi-cart3"></i> Add to Cart</button>
+        <button class="qv-btn-buy"><i class="bi bi-lightning-charge-fill"></i> Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- eye pop up ends -->
  
  
 <!-- ═══════════════════════════════════════
@@ -734,7 +775,7 @@
       <div class="col-lg-2 col-md-3 col-6 anim-fade-up d4">
         <h6 class="footer-col-title">Proxy</h6>
         <ul class="footer-links">
-         <li><a href="about us.html">About</a></li>
+         <li><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="#">Product</a></li>
           

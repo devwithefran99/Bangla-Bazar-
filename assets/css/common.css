@@ -282,15 +282,18 @@ body{
       background: #fff;
       border-radius: 2px 2px 0 0;
       transition: left .25s ease, right .25s ease;
+      
     }
     .main-navbar .nav-link:hover::after,
     .main-navbar .nav-link.active::after {
       left: 12px; right: 12px;
+      
     }
-    .main-navbar .nav-link:hover,
+   
     .main-navbar .nav-link.active {
       color: #fff !important;
       background: rgba(0,0,0,.1);
+      transform: scale(1.1);
     }
  
     /* ═══════════════════════════════════════════════
@@ -464,7 +467,7 @@ body{
 }
 
 .mobile-submenu li a {
-  display: block;
+  display: block !important;
   padding: 10px 20px;
   font-size: 14px;
   color: #333;
@@ -476,7 +479,8 @@ body{
 
 /* open state */
 .mobile-menu-item.active .mobile-submenu {
-  max-height: 300px;
+  max-height: 300px !important;
+  
 }
 
 /* arrow rotate */

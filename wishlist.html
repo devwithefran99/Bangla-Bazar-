@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | BanglaBazar</title>
+    <title>about | BanglaBazar</title>
 <!-- shop link part starts -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
@@ -136,7 +136,7 @@
        
  
         <li class="nav-item">
-          <a class="nav-link" href="about us.html"><i class="bi bi-info-circle me-1"></i> About Us</a>
+             <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-1"></i> About Us</a>
         </li>
  
         <li class="nav-item">
@@ -213,8 +213,8 @@
   </ul>
 </div>
       
-      <a class="nav-link" href="about us.html">
-        <span><i class="bi bi-info-circle me-2 text-success"></i>About Us</span>
+      <a class="nav-link" href="about.html">
+       <span><i class="bi bi-info-circle me-2 text-success"></i>About Us</span>
       </a>
  
       <a class="nav-link" href="contact.html">
@@ -281,7 +281,7 @@
       </div>
       <div class="ms-auto">
         <button class="btn-buy" style="font-size:0.8rem; padding:9px 18px;" onclick="showToast('✓ All available items added!')">
-          <i class="bi bi-bag-check-fill"></i> Buy All Available
+          <a style="text-decoration: none; color: #fff;" href="checkOut.html"><i class="bi bi-bag-check-fill">Buy All Available</i></a> 
         </button>
       </div>
     </div>
@@ -305,7 +305,7 @@
       <span class="stock-badge in"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
       <div class="card-actions">
         <button class="btn-buy" onclick="showToast('🛒 Green Capsicum — Order placed!')">
-          <i class="bi bi-lightning-charge-fill"></i> Buy Now
+          <a style="text-decoration: none; color: #fff;" href="checkOut.html"><i class="bi bi-lightning-charge-fill">Buy Now</i></a> 
         </button>
         <button class="btn-remove" title="Remove" onclick="removeCard('card-1')">
           <i class="bi bi-x-lg"></i>
@@ -329,7 +329,7 @@
       <span class="stock-badge in"><i class="bi bi-check-circle-fill me-1"></i>In Stock</span>
       <div class="card-actions">
         <button class="btn-buy" onclick="showToast('🛒 Chinese Cabbage — Order placed!')">
-          <i class="bi bi-lightning-charge-fill"></i> Buy Now
+        <a style="text-decoration: none; color: #fff;" href="checkOut.html"><i class="bi bi-lightning-charge-fill">Buy Now</i></a> 
         </button>
         <button class="btn-remove" title="Remove" onclick="removeCard('card-2')">
           <i class="bi bi-x-lg"></i>
@@ -361,15 +361,6 @@
       </div>
     </div>
  
-    <!-- Share bar -->
-    <div class="share-bar mt-3">
-      <span>Share wishlist</span>
-      <a class="share-btn fb" href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
-      <a class="share-btn tw" href="#" title="Twitter / X"><i class="bi bi-twitter-x"></i></a>
-      <a class="share-btn pi" href="#" title="Pinterest"><i class="bi bi-pinterest"></i></a>
-      <a class="share-btn ig" href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
-      <button class="share-btn cp" title="Copy link" onclick="showToast('🔗 Link copied!')"><i class="bi bi-link-45deg"></i></button>
-    </div>
  
   </div>
 </div>
@@ -382,6 +373,77 @@
 </main>
 <!-- main part ends -->
 
+
+<!-- add to cart popup -->
+<section>
+  <!-- Cart Overlay -->
+<div class="cp-overlay" id="cpOverlay"></div>
+ 
+<!-- Cart Drawer -->
+<div class="cp-drawer" id="cpDrawer">
+ 
+  <!-- Header -->
+  <div class="cp-header">
+    <div class="cp-title">
+      
+      <img src="./assets/image/Logo.png" alt="">
+     
+    </div>
+    <button class="cp-close" id="cpClose" aria-label="Close cart">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+ 
+  <!-- Items -->
+  <div class="cp-items" id="cpItems">
+ 
+    <div class="cp-item" data-id="1">
+      <div class="cp-item-img"><img src="./assets/image/hotProduct1 (2).png" alt=""></div>
+      <div class="cp-item-info">
+        <div class="cp-item-name">Fresh Indian Orange</div>
+        <div class="cp-item-meta">1 kg × <strong>$12.00</strong></div>
+      </div>
+      <button class="cp-remove" onclick="cpRemoveItem(this)" aria-label="Remove">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+ 
+    <div class="cp-item" data-id="2">
+      <div class="cp-item-img"><img src="./assets/image/hotProduct1 (1).png" alt=""></div>
+      <div class="cp-item-info">
+        <div class="cp-item-name">Green Apple</div>
+        <div class="cp-item-meta">1 kg × <strong>$14.00</strong></div>
+      </div>
+      <button class="cp-remove" onclick="cpRemoveItem(this)" aria-label="Remove">
+        <i class="bi bi-x"></i>
+      </button>
+    </div>
+ 
+  </div>
+ 
+  <!-- Empty state (hidden by default) -->
+  <div class="cp-empty" id="cpEmpty">
+    <i class="bi bi-bag-x"></i>
+    <p>Your cart is empty</p>
+    <a href="shop.html" class="cp-shop-link">Browse Products →</a>
+  </div>
+ 
+  <!-- Footer -->
+  <div class="cp-footer" id="cpFooter">
+    <div class="cp-subtotal">
+      <span class="cp-sub-label"><span id="cpProductCount">2</span> Product</span>
+      <span class="cp-sub-price" id="cpTotal">$26.00</span>
+    </div>
+    <a href="checkout.html" class="cp-checkout-btn">
+      <i class="bi bi-bag-check-fill me-1"></i> Checkout
+    </a>
+    <a href="#" class="cp-cart-link">Go To Cart</a>
+  </div>
+ 
+</div>
+ 
+</section>
+<!-- end add to cart popup -->
 
  <!-- footrer part starts -->
 
@@ -430,7 +492,7 @@
       <div class="col-lg-2 col-md-3 col-6 anim-fade-up d4">
         <h6 class="footer-col-title">Proxy</h6>
         <ul class="footer-links">
-         <li><a href="about us.html">About</a></li>
+         <li><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="#">Product</a></li>
           
@@ -475,6 +537,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mixitup@3/dist/mixitup.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/common.js"></script>
 <script src="./assets/js/pages.js"></script>
 </body>
 </html>
